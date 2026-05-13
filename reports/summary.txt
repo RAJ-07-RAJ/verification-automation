@@ -1,0 +1,26 @@
+=============================================
+  SIMULATION REPORT
+=============================================
+  Log file  : ../sample_logs/sim1.log
+  Verdict   : FAIL
+---------------------------------------------
+  UVM_ERROR     : 5
+  UVM_WARNING   : 4
+  UVM_FATAL     : 2
+  ASSERTIONS    : 2
+=============================================
+
+ERRORS:
+  [900ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0030 EXP=0xCAFE GOT=0x0000
+  [1200ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0040 EXP=0x1234 GOT=0xFFFF
+  [1800ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0060 EXP=0x5678 GOT=0x0000
+  [2200ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0070 EXP=0x9999 GOT=0x8888
+  # UVM_ERROR  :  4
+
+ASSERTIONS:
+  [1900ns]  ASSERTION FAILED: axi_master.sv:142 - AWREADY timeout exceeded 16 cycles
+  [2600ns]  ASSERTION FAILED: axi_slave.sv:88 - RVALID asserted without ARVALID
+
+FATALS:
+  [2700ns]  UVM_FATAL: uvm_test_top.env.scoreboard [SCB] Too many errors - stopping simulation
+  # UVM_FATAL  :  1

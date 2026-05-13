@@ -1,0 +1,21 @@
+# Simulation Log - AXI Master Testbench
+# Date: 2024-01-15  Seed: 256  Test: axi_stress_test
+[0ns]     INFO:  Simulation started
+[10ns]    INFO:  Reset asserted
+[50ns]    INFO:  Reset released
+[100ns]   UVM_INFO: uvm_test_top.env.agent [AGENT] Starting stress sequence
+[200ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x1000 DATA=0xAAAA
+[300ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x1000 DATA=0xAAAA
+[350ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Data match   ADDR=0x1000 EXP=0xAAAA GOT=0xAAAA ✓
+[400ns]   UVM_INFO: uvm_test_top.env.monitor [MON] Bus utilization nominal (42%)
+[500ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x2000 DATA=0xBBBB
+[600ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Data match   ADDR=0x2000 EXP=0xBBBB GOT=0xBBBB ✓
+[700ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Data match   ADDR=0x3000 EXP=0xDDDD GOT=0xDDDD ✓
+[800ns]   UVM_INFO: uvm_test_top.env.monitor [MON] Outstanding transactions within limit (3/8)
+[900ns]   UVM_INFO: uvm_test_top.env.monitor [MON] BVALID received within timeout window after WLAST
+[1000ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Data match   ADDR=0x4000 EXP=0x1234 GOT=0x1234 ✓
+[1050ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x5000 DATA=0x5A5A
+[1100ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Data match   ADDR=0x5000 EXP=0x5A5A GOT=0x5A5A ✓
+[1150ns]  UVM_INFO: uvm_test_top.env.monitor [MON] All write responses received, no timeouts
+[1200ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Stress sequence complete — all transactions verified
+[1250ns]  INFO:  Simulation ended

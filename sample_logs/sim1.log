@@ -1,0 +1,39 @@
+# Simulation Log - AXI Master Testbench
+# Date: 2024-01-15  Seed: 42  Test: axi_basic_write
+
+[0ns]     INFO:  Simulation started
+[10ns]    INFO:  Reset asserted
+[50ns]    INFO:  Reset released
+[100ns]   UVM_INFO: uvm_test_top.env.agent [AGENT] Starting sequence
+[200ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write transaction ADDR=0x0010 DATA=0xDEAD
+[310ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x0010 DATA=0xDEAD
+[400ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write transaction ADDR=0x0020 DATA=0xBEEF
+[500ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x0020 DATA=0xBEEF
+[600ns]   UVM_WARNING: uvm_test_top.env.agent [DRIVER] Bus stall detected - waited 3 cycles
+[700ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving read transaction ADDR=0x0010
+[800ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Read response ADDR=0x0010 DATA=0xDEAD - MATCH
+[900ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0030 EXP=0xCAFE GOT=0x0000
+[1000ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving read transaction ADDR=0x0020
+[1100ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Read response ADDR=0x0020 DATA=0xBEEF - MATCH
+[1200ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0040 EXP=0x1234 GOT=0xFFFF
+[1300ns]  UVM_WARNING: uvm_test_top.env.monitor [MON] Protocol violation - AWVALID held too long
+[1400ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write transaction ADDR=0x0050 DATA=0xABCD
+[1500ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x0050 DATA=0xABCD
+[1600ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving read transaction ADDR=0x0050
+[1700ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Read response ADDR=0x0050 DATA=0xABCD - MATCH
+[1800ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0060 EXP=0x5678 GOT=0x0000
+[1900ns]  ASSERTION FAILED: axi_master.sv:142 - AWREADY timeout exceeded 16 cycles
+[2000ns]  UVM_WARNING: uvm_test_top.env.monitor [MON] Unexpected WSTRB value detected
+[2100ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write transaction ADDR=0x0070 DATA=0x9999
+[2200ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x0070 EXP=0x9999 GOT=0x8888
+[2300ns]  UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x0070 DATA=0x9999
+[2400ns]  UVM_INFO: uvm_test_top.env.agent [DRIVER] All transactions complete
+[2500ns]  UVM_INFO: uvm_test_top [TEST] Checking final scoreboard state
+[2600ns]  ASSERTION FAILED: axi_slave.sv:88 - RVALID asserted without ARVALID
+[2700ns]  UVM_FATAL: uvm_test_top.env.scoreboard [SCB] Too many errors - stopping simulation
+[2800ns]  INFO:  Simulation ended
+# UVM Report Summary
+# UVM_INFO  :  18
+# UVM_WARNING :  3
+# UVM_ERROR  :  4
+# UVM_FATAL  :  1

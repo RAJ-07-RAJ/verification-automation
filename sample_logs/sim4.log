@@ -1,0 +1,22 @@
+# Simulation Log - AXI Master Testbench
+# Date: 2024-01-15  Seed: 256  Test: axi_stress_test
+[0ns]     INFO:  Simulation started
+[10ns]    INFO:  Reset asserted
+[50ns]    INFO:  Reset released
+[100ns]   UVM_INFO: uvm_test_top.env.agent [AGENT] Starting stress sequence
+[200ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x1000 DATA=0xAAAA
+[300ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x1000 DATA=0xAAAA
+[400ns]   UVM_WARNING: uvm_test_top.env.monitor [MON] High bus utilization detected
+[500ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x2000 DATA=0xBBBB
+[600ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x2000 EXP=0xBBBB GOT=0xCCCC
+[700ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x3000 EXP=0xDDDD GOT=0x0000
+[800ns]   UVM_WARNING: uvm_test_top.env.monitor [MON] Outstanding transactions exceeded limit
+[900ns]   ASSERTION FAILED: axi_slave.sv:310 - BVALID timeout after WLAST
+[1000ns]  UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x4000 EXP=0x1234 GOT=0xDEAD
+[1100ns]  UVM_FATAL: uvm_test_top.env.scoreboard [SCB] Too many errors - stopping simulation
+[1200ns]  INFO:  Simulation ended
+# UVM Report Summary
+# UVM_INFO    :  6
+# UVM_WARNING :  2
+# UVM_ERROR   :  3
+# UVM_FATAL   :  1

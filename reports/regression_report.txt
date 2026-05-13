@@ -1,0 +1,20 @@
+=======================================================
+  REGRESSION SUMMARY REPORT
+=======================================================
+  Total tests  : 4
+  Passed       : 1
+  Failed       : 3
+  Pass rate    : 25%
+=======================================================
+
+FILE                  ERR  WARN  FATAL  ASSERT  VERDICT
+-------------------------------------------------------
+sim1.log                5     4      2       2     FAIL
+sim2.log                0     0      0       0     PASS
+sim3.log                2     2      1       1     FAIL
+sim4.log                4     3      2       1     FAIL
+
+FAILED TESTS:
+  sim1.log  (errors=5 fatals=2 assertions=2)
+  sim3.log  (errors=2 fatals=1 assertions=1)
+  sim4.log  (errors=4 fatals=2 assertions=1)

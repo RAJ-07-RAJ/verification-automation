@@ -1,0 +1,21 @@
+# Simulation Log - AXI Master Testbench
+# Date: 2024-01-15  Seed: 123  Test: axi_reset_test
+[0ns]     INFO:  Simulation started
+[10ns]    INFO:  Reset asserted
+[50ns]    INFO:  Reset released
+[100ns]   UVM_INFO: uvm_test_top.env.agent [AGENT] Starting reset sequence
+[200ns]   UVM_WARNING: uvm_test_top.env.monitor [MON] Bus activity during reset detected
+[300ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x0010 DATA=0x1111
+[400ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Response timeout ADDR=0x0010
+[500ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Re-asserting reset
+[600ns]   UVM_INFO: uvm_test_top.env.agent [AGENT] Reset sequence complete
+[700ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x0020 DATA=0x2222
+[800ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x0020 DATA=0x2222
+[900ns]   ASSERTION FAILED: axi_master.sv:201 - Reset held longer than max allowed cycles
+[1000ns]  UVM_INFO: uvm_test_top [TEST] Checking final scoreboard state
+[1100ns]  INFO:  Simulation ended
+# UVM Report Summary
+# UVM_INFO    :  8
+# UVM_WARNING :  1
+# UVM_ERROR   :  1
+# UVM_FATAL   :  0
