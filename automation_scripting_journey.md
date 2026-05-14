@@ -92,13 +92,38 @@ Generate reusable simulation summary reports.
 
 ---
 
-# Next Planned Improvements
+---
+# Stage 4 — Multi-Log Regression Parser
 
-- Multiple log support
-- Regression dashboard
-- Colored terminal output
-- CSV/HTML reports
-- Jenkins integration
-- Auto waveform collection
-- Runtime extraction
-- Coverage extraction
+## Objective
+Scale from single log to full regression — parse an entire folder of logs automatically.
+
+## Script
+`log_parser/Multi_log_parser`
+
+## Input
+`sample_logs` — sim1.log to sim4.log
+
+## Functionality
+- Scans folder using os.listdir()
+- Parses every .log file
+- Counts errors, warnings, fatals, assertions per file
+- Decides PASS/FAIL per test
+- Calculates total/passed/failed/pass rate
+- Saves full regression summary to reports/regression_report.txt
+
+## Output
+Terminal: formatted results table
+File: reports/regression_report.txt
+
+## Key Concepts Learned
+- os.listdir() and os.path.join()
+- List of dicts as a results table
+- f-string column formatting
+- datetime for timestamps
+- Scaling single-file logic to folder-level automation
+
+## Limitation
+- Simple string matching, not regex yet
+- No failure detail extraction
+- No grouping by failure type
