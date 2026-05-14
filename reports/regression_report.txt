@@ -1,10 +1,11 @@
 =======================================================
-  REGRESSION SUMMARY REPORT
+  REGRESSION SUMMARY
+  Generated : 2026-05-14 22:55:13
 =======================================================
-  Total tests  : 4
-  Passed       : 1
-  Failed       : 3
-  Pass rate    : 25%
+  Total     : 4
+  Passed    : 1
+  Failed    : 3
+  Pass rate : 25%
 =======================================================
 
 FILE                  ERR  WARN  FATAL  ASSERT  VERDICT
@@ -15,6 +16,6 @@ sim3.log                2     2      1       1     FAIL
 sim4.log                4     3      2       1     FAIL
 
 FAILED TESTS:
-  sim1.log  (errors=5 fatals=2 assertions=2)
-  sim3.log  (errors=2 fatals=1 assertions=1)
-  sim4.log  (errors=4 fatals=2 assertions=1)
+  sim1.log             errors=5  fatals=2  assertions=2
+  sim3.log             errors=2  fatals=1  assertions=1
+  sim4.log             errors=4  fatals=2  assertions=1
