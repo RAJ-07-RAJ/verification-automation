@@ -76,6 +76,13 @@ Generate reusable simulation summary reports.
 - Decides PASS/FAIL
 - Generates report file
 
+
+
+
+
+
+
+
 ## Output
 `reports/summary.txt`
 
@@ -127,3 +134,38 @@ File: reports/regression_report.txt
 - Simple string matching, not regex yet
 - No failure detail extraction
 - No grouping by failure type
+
+---
+# Stage 5 — Regex-Based Data Extractor
+
+## Objective
+Use regex to extract structured data from log lines —
+not just detect keywords but pull out actual values.
+
+## Script
+`log_parser/regex`
+
+## Input
+`log_parser/sample_logs/` — sim1 through sim6.log
+
+## Functionality
+- Extracts timestamp, address, expected value, got value from mismatch lines
+- Extracts sv file name, line number, message from assertion lines
+- Uses named capture groups for readable patterns
+- Saves all extracted failures to reports/extracted_failures.csv
+
+## Output
+Terminal: structured failure table
+File: reports/extracted_failures.csv
+
+## Key Concepts Learned
+- re.search() with capture groups
+- Named groups (?P<name>pattern)
+- Extracting structured data from unstructured text
+- Building patterns incrementally
+- CSV export with csv.DictWriter
+
+## Why this matters
+In a real regression with 5000 logs, you never read lines manually.
+Regex pulls every data mismatch address, every assertion location,
+every timeout value — structured and queryable in seconds.

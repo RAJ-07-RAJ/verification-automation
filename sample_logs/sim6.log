@@ -1,0 +1,21 @@
+# Simulation Log - AXI Master Testbench
+# Date: 2024-01-16  Seed: 512  Test: axi_write_only
+[0ns]     INFO:  Simulation started
+[10ns]    INFO:  Reset asserted
+[50ns]    INFO:  Reset released
+[100ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x1000 DATA=0x11111111
+[200ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x1000 DATA=0x11111111
+[300ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x2000 DATA=0x22222222
+[350ns]   UVM_WARNING: uvm_test_top.env.monitor [MON] Protocol violation - AWVALID held too long
+[400ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x2000 EXP=0x22222222 GOT=0x00000000
+[500ns]   ASSERTION FAILED: axi_master.sv:201 - Reset held longer than max allowed cycles
+[600ns]   UVM_INFO: uvm_test_top.env.agent [DRIVER] Driving write ADDR=0x3000 DATA=0x33333333
+[700ns]   UVM_INFO: uvm_test_top.env.scoreboard [SCB] Write received ADDR=0x3000 DATA=0x33333333
+[800ns]   UVM_WARNING: uvm_test_top.env.monitor [MON] Unexpected WSTRB value detected
+[900ns]   UVM_ERROR: uvm_test_top.env.scoreboard [SCB] Data mismatch ADDR=0x3000 EXP=0x33333333 GOT=0xFFFFFFFF
+[1000ns]  INFO:  Simulation ended
+# UVM Report Summary
+# UVM_INFO    :  5
+# UVM_WARNING :  2
+# UVM_ERROR   :  2
+# UVM_FATAL   :  0
