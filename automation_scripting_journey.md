@@ -169,3 +169,40 @@ File: reports/extracted_failures.csv
 In a real regression with 5000 logs, you never read lines manually.
 Regex pulls every data mismatch address, every assertion location,
 every timeout value — structured and queryable in seconds.
+---
+# Stage 6 — Failure Classifier and Triage Report
+
+## Objective
+Group failures by root cause type across all logs.
+Answer the real question: how many unique failure types exist?
+
+## Script
+`log_parser/failure_classifier.py`
+
+## Input
+`log_parser/sample_logs/` — sim1 through sim6.log
+
+## Functionality
+- Classifies every failure line into a named type
+- Groups by type using defaultdict
+- Counts occurrences per type across all logs
+- Tracks which files each type appears in
+- Sorts by frequency — worst failures first
+- Saves triage report to .txt and .csv
+
+## Output
+Terminal: ranked failure triage table
+File: reports/failure_triage.txt
+File: reports/failure_triage.csv
+
+## Key Concepts Learned
+- collections.defaultdict
+- classify() function — single responsibility
+- Sorting by value using lambda
+- set() for unique file tracking
+- Writing both .txt and .csv from same data
+
+## Why this matters
+500 failures in a regression might have only 3 root causes.
+This script finds that instantly. Engineers fix root causes,
+not individual failures. This is how debug time gets cut in half.

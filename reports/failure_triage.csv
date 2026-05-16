@@ -1,0 +1,10 @@
+failure_type,count,affected_files
+DATA_MISMATCH,12,"sim1.log, sim4.log, sim5.log, sim6.log"
+FATAL_STOP,8,"sim1.log, sim3.log, sim4.log, sim5.log, sim6.log"
+TIMEOUT,3,"sim2.log, sim3.log"
+BUS_STALL,2,"sim1.log, sim5.log"
+PROTOCOL_VIOLATION,2,"sim1.log, sim6.log"
+ASSERTION_AWREADY,2,"sim1.log, sim5.log"
+ASSERTION_RVALID,2,"sim1.log, sim5.log"
+ASSERTION_RESET,2,"sim3.log, sim6.log"
+ASSERTION_BVALID,1,sim4.log
