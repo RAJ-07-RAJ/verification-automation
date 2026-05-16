@@ -282,3 +282,41 @@ Report: reports/full_regression.txt
 This is exactly how regression managers work.
 Replace fake_simulator.py call with actual vcs/questasim command
 and this script runs a real RTL regression unchanged.
+
+---
+# Stage 9 — Coverage Parser and Tracker
+
+## Objective
+Parse simulator coverage reports, track coverage trend
+across runs, identify uncovered groups and gaps.
+
+## Script
+`coverage_tools/coverage_parser.py`
+
+## Input
+`coverage_tools/sample_coverage/` — coverage_run1/2/3.txt
+
+## Functionality
+- Parses line, functional, toggle coverage sections
+- Extracts coverage % per file and per group using regex
+- Tracks overall coverage trend across multiple runs
+- Calculates delta between runs
+- Identifies gaps — groups below 90% threshold
+- Saves report to txt and trend data to CSV
+
+## Output
+Terminal + File : reports/coverage_report.txt
+CSV            : reports/coverage_trend.csv
+
+## Key Concepts Learned
+- Multi-section parsing with state tracking
+- Coverage report structure
+- Trend calculation across runs
+- Gap identification and priority ordering
+- Combining regex + state machine for structured parsing
+
+## Why this matters
+Coverage closure is a primary verification goal.
+Scripts that automatically identify gaps and track trends
+across regressions save hours of manual report reading.
+This is what coverage automation tools do internally.
