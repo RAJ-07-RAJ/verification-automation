@@ -243,4 +243,42 @@ Terminal + File: reports/pandas_analysis.txt
 ## Why this matters
 pandas turns raw CSV data into queryable analysis.
 In real projects this feeds dashboards, email reports,
-and management summaries — all automated, zero manual work.
+and management summaries — all automated, zero manual work
+
+---
+# Stage 8 — Testlist Launcher and Regression Manager
+
+## Objective
+Simulate the full industry regression flow —
+read a testlist, launch every test, parse its log,
+generate a final regression report. All automated.
+
+## Scripts
+`regression_manager/testlist_launcher.py` — full pipeline
+`log_parser/fake_simulator.py`            — mimics a real simulator
+
+## Input
+`regression_manager/testlists/basic_regression.f` — testlist
+
+## Functionality
+- Reads testlist file, skips comments
+- Launches each test using subprocess.run()
+- Captures return code (0=pass 1=fail)
+- Parses generated log files
+- Produces full regression report with per-test verdict
+
+## Output
+Logs  : log_parser/sim_runs/*.log  (one per test)
+Report: reports/full_regression.txt
+
+## Key Concepts Learned
+- subprocess.run() — launching external processes
+- sys.argv — passing arguments to scripts
+- sys.exit() — return codes from processes
+- Return code 0 = pass, non-zero = fail (Unix standard)
+- Full pipeline: launch → collect → parse → report
+
+## Why this matters
+This is exactly how regression managers work.
+Replace fake_simulator.py call with actual vcs/questasim command
+and this script runs a real RTL regression unchanged.

@@ -1,0 +1,37 @@
+============================================================
+  COVERAGE REPORT
+  Generated  : 2026-05-17 00:15:57
+  Runs found : 3
+============================================================
+
+OVERALL COVERAGE TREND:
+  RUN         OVERALL  DELTA
+  -----------------------------------
+  run1         68.42%  --
+  run2         79.83%  +11.41%
+  run3         88.67%  +8.84%
+
+LINE COVERAGE — run3:
+  FILE                   COVERAGE  STATUS
+  ---------------------------------------------
+  axi_slave.sv             91.53%  OK
+  axi_master.sv            93.33%  OK
+  axi_monitor.sv           100.0%  OK
+
+FUNCTIONAL COVERAGE — run3:
+  GROUP                       COVERAGE     GAP  STATUS
+  -------------------------------------------------------
+  axi_error_coverage             70.0%   30.0%  ACCEPTABLE
+  axi_burst_coverage             80.0%   20.0%  ACCEPTABLE
+  axi_read_coverage              95.0%    5.0%  OK
+  axi_write_coverage             96.0%    4.0%  OK
+
+COVERAGE GAPS (below 90%):
+  Priority order — lowest coverage first:
+  → axi_error_coverage        70.0%  (30.0% uncovered)
+  → axi_burst_coverage        80.0%  (20.0% uncovered)
+
+TOGGLE COVERAGE — run3:
+  axi_master.sv        90.83%
+
+============================================================

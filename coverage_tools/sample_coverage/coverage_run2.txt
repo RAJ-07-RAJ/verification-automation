@@ -1,0 +1,55 @@
+# Coverage Report - AXI Master Testbench
+# Run     : run2
+# Date    : 2024-01-17
+# Seed    : 99
+
+============================================================
+COVERAGE SUMMARY
+============================================================
+
+LINE COVERAGE
+  File: axi_master.sv
+    Lines hit    : 155
+    Lines total  : 180
+    Coverage     : 86.11%
+
+  File: axi_slave.sv
+    Lines hit    : 108
+    Lines total  : 130
+    Coverage     : 83.07%
+
+  File: axi_monitor.sv
+    Lines hit    : 48
+    Lines total  : 50
+    Coverage     : 96.00%
+
+FUNCTIONAL COVERAGE
+  Group: axi_write_coverage
+    Bins hit     : 22
+    Bins total   : 25
+    Coverage     : 88.00%
+
+  Group: axi_read_coverage
+    Bins hit     : 17
+    Bins total   : 20
+    Coverage     : 85.00%
+
+  Group: axi_burst_coverage
+    Bins hit     : 13
+    Bins total   : 20
+    Coverage     : 65.00%
+
+  Group: axi_error_coverage
+    Bins hit     : 5
+    Bins total   : 10
+    Coverage     : 50.00%
+
+TOGGLE COVERAGE
+  File: axi_master.sv
+    Signals toggled  : 98
+    Signals total    : 120
+    Coverage         : 81.67%
+
+============================================================
+OVERALL COVERAGE : 79.83%
+============================================================

@@ -1,0 +1,21 @@
+=================================================================
+  FULL REGRESSION REPORT
+  Generated : 2026-05-16 23:51:35
+=================================================================
+  Total     : 7
+  Passed    : 7
+  Failed    : 0
+  Pass rate : 100%
+=================================================================
+
+TEST                        SEED  ERR  WARN  FATAL  ASSERT  VERDICT
+-----------------------------------------------------------------
+axi_basic_write               42    0     0      0       0     PASS
+axi_basic_read                42    0     0      0       0     PASS
+axi_burst_test                99    0     0      0       0     PASS
+axi_stress_test               77    0     0      0       0     PASS
+axi_reset_test               123    0     0      0       0     PASS
+axi_write_only               256    0     0      0       0     PASS
+axi_read_only                512    0     0      0       0     PASS
+
+FAILED TESTS:

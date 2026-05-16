@@ -1,0 +1,12 @@
+# Simulation Log
+# Test : default_test
+# Seed : 1
+[0ns]    INFO: Simulation started
+[10ns]   INFO: Reset asserted
+[50ns]   INFO: Reset released
+[100ns]  UVM_INFO: Starting test default_test
+[300ns]  UVM_INFO: All transactions complete
+[400ns]  UVM_INFO: Scoreboard clean - no mismatches
+[500ns]  INFO: Simulation ended
+# UVM_ERROR  : 0
+# UVM_FATAL  : 0
