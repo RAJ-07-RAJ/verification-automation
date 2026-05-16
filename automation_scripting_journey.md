@@ -206,3 +206,41 @@ File: reports/failure_triage.csv
 500 failures in a regression might have only 3 root causes.
 This script finds that instantly. Engineers fix root causes,
 not individual failures. This is how debug time gets cut in half.
+---
+# Stage 7 — Pandas Regression Analyser
+
+## Objective
+Load extracted failure CSVs into pandas and produce
+a structured analysis report with ranked findings.
+
+## Script
+`log_parser/pandas_analyser.py`
+
+## Input
+`reports/extracted_failures.csv` — from Stage 5
+`reports/failure_triage.csv`    — from Stage 6
+
+## Functionality
+- Loads CSV data into DataFrame
+- Failures per file sorted worst first
+- Failures by type sorted most common first
+- ASCII bar chart for quick visual comparison
+- Data mismatch deep dive — unique addresses, all values
+- Assertion deep dive — file, line number, message
+- Triage summary merged from Stage 6 output
+- Recommendation block — what to fix first
+
+## Output
+Terminal + File: reports/pandas_analysis.txt
+
+## Key Concepts Learned
+- pd.read_csv()
+- df.groupby().count()
+- df[df["col"] == value] filtering
+- sort_values(), nunique(), iterrows()
+- Combining multiple CSVs into one analysis
+
+## Why this matters
+pandas turns raw CSV data into queryable analysis.
+In real projects this feeds dashboards, email reports,
+and management summaries — all automated, zero manual work.

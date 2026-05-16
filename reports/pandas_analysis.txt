@@ -1,0 +1,78 @@
+============================================================
+  REGRESSION ANALYSIS REPORT
+  Generated : 2026-05-16 23:32:06
+============================================================
+
+  Total failures   : 19
+  Files affected   : 5
+  Unique types     : 2
+
+============================================================
+  FAILURES PER FILE (worst first)
+============================================================
+  sim1.log          6  ######
+  sim5.log          5  #####
+  sim4.log          4  ####
+  sim6.log          3  ###
+  sim3.log          1  #
+
+============================================================
+  FAILURES BY TYPE (most common first)
+============================================================
+  DATA_MISMATCH              12  ############
+  ASSERTION                   7  #######
+
+============================================================
+  DATA MISMATCH DEEP DIVE
+============================================================
+  Total mismatches : 12
+  Unique addresses : 8
+
+  FILE         ADDR         EXPECTED       GOT
+  --------------------------------------------------
+  sim1.log     0x0030       0xCAFE         0x0000
+  sim1.log     0x0040       0x1234         0xFFFF
+  sim1.log     0x0060       0x5678         0x0000
+  sim1.log     0x0070       0x9999         0x8888
+  sim4.log     0x2000       0xBBBB         0xCCCC
+  sim4.log     0x3000       0xDDDD         0x0000
+  sim4.log     0x4000       0x1234         0xDEAD
+  sim5.log     0x0020       0xCAFEBABE     0x00000000
+  sim5.log     0x0030       0x12345678     0xDEADDEAD
+  sim5.log     0x0040       0xAAAABBBB     0xCCCCDDDD
+  sim6.log     0x2000       0x22222222     0x00000000
+  sim6.log     0x3000       0x33333333     0xFFFFFFFF
+
+============================================================
+  ASSERTION DEEP DIVE
+============================================================
+  Total assertions : 7
+
+  sim1.log     axi_master.sv:142.0  AWREADY timeout exceeded 16 cycles
+  sim1.log     axi_slave.sv:88.0  RVALID asserted without ARVALID
+  sim3.log     axi_master.sv:201.0  Reset held longer than max allowed cycles
+  sim4.log     axi_slave.sv:310.0  BVALID timeout after WLAST
+  sim5.log     axi_master.sv:142.0  AWREADY timeout exceeded 16 cycles
+  sim5.log     axi_slave.sv:88.0  RVALID asserted without ARVALID
+  sim6.log     axi_master.sv:201.0  Reset held longer than max allowed cycles
+
+============================================================
+  TRIAGE SUMMARY (from failure_classifier)
+============================================================
+  DATA_MISMATCH             count=12  files: sim1.log, sim4.log, sim5.log, sim6.log
+  FATAL_STOP                count=8  files: sim1.log, sim3.log, sim4.log, sim5.log, sim6.log
+  TIMEOUT                   count=3  files: sim2.log, sim3.log
+  BUS_STALL                 count=2  files: sim1.log, sim5.log
+  PROTOCOL_VIOLATION        count=2  files: sim1.log, sim6.log
+  ASSERTION_AWREADY         count=2  files: sim1.log, sim5.log
+  ASSERTION_RVALID          count=2  files: sim1.log, sim5.log
+  ASSERTION_RESET           count=2  files: sim3.log, sim6.log
+  ASSERTION_BVALID          count=1  files: sim4.log
+
+============================================================
+  RECOMMENDATION
+============================================================
+  Priority fix : DATA_MISMATCH
+  Occurrences  : 12
+  Fixing this type will have the highest impact.
+============================================================
