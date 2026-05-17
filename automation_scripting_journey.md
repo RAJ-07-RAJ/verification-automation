@@ -320,3 +320,41 @@ Coverage closure is a primary verification goal.
 Scripts that automatically identify gaps and track trends
 across regressions save hours of manual report reading.
 This is what coverage automation tools do internally.
+
+---
+# Stage 10 — First Real RTL Design + Automation
+
+## Objective
+Connect everything built in Stages 1-9 to a real
+RTL simulation. Compile, simulate, parse, report — fully automated.
+
+## Design
+`rtl_projects/counter/counter.sv` — 4-bit synchronous up counter
+
+## Testbench
+`rtl_projects/counter/tb_counter.sv`
+- Tests reset behaviour
+- Tests counting 0 to 15
+- Tests wrap-around
+- Tests enable/disable
+- Tests mid-count reset
+
+## Automation
+`rtl_projects/counter/run.py`
+- Compiles RTL + TB using iverilog via subprocess
+- Simulates using vvp
+- Captures stdout to log file
+- Parses log for errors and warnings
+- Generates full report
+
+## Tools
+- Icarus Verilog (iverilog) — open source RTL simulator
+- vvp — simulation runtime
+
+## Key Concepts Learned
+- What a module is and how instantiation works
+- always_ff — synchronous flip-flop behaviour
+- Clock generation in testbench
+- $display for simulation messages
+- Compile step separate from simulation step
+- Your scripts work on real sim output unchanged

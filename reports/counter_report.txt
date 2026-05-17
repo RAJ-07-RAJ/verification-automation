@@ -1,0 +1,46 @@
+==================================================
+  COUNTER SIMULATION REPORT
+  Generated : 2026-05-17 11:57:06
+==================================================
+  Design    : counter.sv
+  Testbench : tb_counter.sv
+  Verdict   : PASS
+--------------------------------------------------
+  UVM_INFO    : 23
+  UVM_WARNING : 0
+  UVM_ERROR   : 0
+==================================================
+
+FULL SIMULATION OUTPUT:
+--------------------------------------------------
+===========================================
+  4-bit Counter Testbench
+===========================================
+[16000] Reset applied. Count = 0
+UVM_INFO: Reset check PASSED. Count=0
+[16000] Reset released. Counting enabled.
+[26000] UVM_INFO: Count = 1
+[36000] UVM_INFO: Count = 2
+[46000] UVM_INFO: Count = 3
+[56000] UVM_INFO: Count = 4
+[66000] UVM_INFO: Count = 5
+[76000] UVM_INFO: Count = 6
+[86000] UVM_INFO: Count = 7
+[96000] UVM_INFO: Count = 8
+[106000] UVM_INFO: Count = 9
+[116000] UVM_INFO: Count = 10
+[126000] UVM_INFO: Count = 11
+[136000] UVM_INFO: Count = 12
+[146000] UVM_INFO: Count = 13
+[156000] UVM_INFO: Count = 14
+[166000] UVM_INFO: Count = 15
+[176000] UVM_INFO: Count = 0
+[216000] UVM_INFO: Enable disabled. Count should freeze at 3
+[226000] UVM_INFO: After one clock with enable=0. Count = 3
+[236000] UVM_INFO: Enable re-asserted. Count = 4
+[246000] UVM_INFO: Mid-count reset. Count = 0
+UVM_INFO: Mid-count reset PASSED. Count=0
+===========================================
+UVM_INFO: TEST PASSED - 0 errors
+===========================================
+rtl_projects/counter/tb_counter.sv:96: $finish called at 246000 (1ps)
