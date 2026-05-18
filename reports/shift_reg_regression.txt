@@ -1,0 +1,17 @@
+
+=======================================================
+  SHIFT REGISTER REGRESSION REPORT
+  Generated : 2026-05-18 23:46:40
+=======================================================
+  Total tests : 4
+  Passed      : 4
+  Failed      : 0
+  Pass rate   : 100%
+=======================================================
+
+TEST                  PASSES  ERRORS  VERDICT
+---------------------------------------------
+basic_shift               11       0     PASS
+boundary                  10       0     PASS
+reset_load                 8       0     PASS
+random_shift             200       0     PASS

@@ -1,0 +1,16 @@
+=========================================
+  Reset and Load Priority Test
+=========================================
+UVM_INFO: [PASS] initial_reset | data_out=0
+UVM_INFO: [PASS] shift_before_reset | data_out=5
+UVM_INFO: [PASS] reset_during_shift | data_out=0
+UVM_INFO: [PASS] shift_after_reset | data_out=6
+UVM_INFO: [PASS] load_priority_over_enable | data_out=c
+UVM_INFO: [PASS] load_zeros | data_out=0
+UVM_INFO: [PASS] load_ones | data_out=f
+UVM_INFO: [PASS] reset_priority_over_load | data_out=0
+
+  Passed: 8  Failed: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/shift_reg/tb_reset_load.sv:91: $finish called at 106000 (1ps)

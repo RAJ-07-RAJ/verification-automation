@@ -1,0 +1,18 @@
+=========================================
+  Boundary Test
+=========================================
+UVM_INFO: [PASS] full_left_shift_zeros | data_out=0
+UVM_INFO: [PASS] full_right_shift_ones | data_out=f
+UVM_INFO: [PASS] msb_boundary_left | data_out=0
+UVM_INFO: [PASS] lsb_boundary_right | data_out=0
+UVM_INFO: [PASS] alt_left_1 | data_out=1
+UVM_INFO: [PASS] alt_left_2 | data_out=2
+UVM_INFO: [PASS] alt_left_3 | data_out=5
+UVM_INFO: [PASS] alt_left_4 | data_out=a
+UVM_INFO: [PASS] dir_change_before | data_out=8
+UVM_INFO: [PASS] dir_change_after | data_out=4
+
+  Passed: 10  Failed: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/shift_reg/tb_boundary.sv:95: $finish called at 236000 (1ps)

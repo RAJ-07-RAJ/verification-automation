@@ -1,0 +1,19 @@
+=========================================
+  Basic Shift Test
+=========================================
+UVM_INFO: [PASS] reset_check | data_out=0
+UVM_INFO: [PASS] parallel_load | data_out=a
+UVM_INFO: [PASS] shift_left_0 | data_out=4
+UVM_INFO: [PASS] shift_left_1 | data_out=8
+UVM_INFO: [PASS] shift_left_serial1 | data_out=1
+UVM_INFO: [PASS] reload_for_right | data_out=a
+UVM_INFO: [PASS] shift_right_0 | data_out=5
+UVM_INFO: [PASS] shift_right_1 | data_out=2
+UVM_INFO: [PASS] shift_right_serial1 | data_out=9
+UVM_INFO: [PASS] hold_check | data_out=9
+UVM_INFO: [PASS] hold_check2 | data_out=9
+
+  Passed: 11  Failed: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/shift_reg/tb_basic_shift.sv:96: $finish called at 116000 (1ps)
