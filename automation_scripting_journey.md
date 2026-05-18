@@ -358,3 +358,24 @@ RTL simulation. Compile, simulate, parse, report — fully automated.
 - $display for simulation messages
 - Compile step separate from simulation step
 - Your scripts work on real sim output unchanged
+---
+# Stage 11 — Shift Register with Multi-Test Regression
+
+## Design
+`rtl_projects/shift_reg/shift_reg.sv`
+N-bit shift register. Left/right direction. Serial input.
+Parallel load. Synchronous reset. Priority: rst > load > enable > hold.
+
+## Tests
+- tb_basic_shift.sv    — left/right shift, serial_in, hold
+- tb_boundary.sv       — MSB/LSB boundary, full shift-through
+- tb_reset_load.sv     — reset during shift, load priority
+- tb_random_shift.sv   — 200 random cycles with reference model
+
+## Key Concepts Learned
+- Priority encoding in always_ff
+- Reference model in testbench — software tracks expected state
+- Multi-test regression — one design, multiple TB files
+- Each TB compiles and simulates independently
+- run.py orchestrates all 4, generates unified report
+- Random testing with self-checking reference model
