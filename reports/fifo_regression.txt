@@ -1,0 +1,16 @@
+
+=======================================================
+  FIFO REGRESSION REPORT
+  Generated : 2026-05-21 19:25:15
+=======================================================
+  Total     : 3
+  Passed    : 3
+  Failed    : 0
+  Pass rate : 100%
+=======================================================
+
+TEST                       PASSES  ERRORS  VERDICT
+--------------------------------------------------
+fifo_basic                      9       0     PASS
+fifo_data_integrity            19       0     PASS
+fifo_assertions                 6       0     PASS

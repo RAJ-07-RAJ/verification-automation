@@ -1,0 +1,21 @@
+=========================================
+  FIFO Assertion Test
+=========================================
+
+--- Fill with assertion checks ---
+UVM_INFO: [PASS] full_flag_asserted | count=8
+UVM_INFO: [PASS] overflow_blocked | count=8
+
+--- Drain with assertion checks ---
+UVM_INFO: [PASS] empty_flag_asserted | count=0
+UVM_INFO: [PASS] underflow_blocked | count=0
+
+--- Reset mid operation ---
+UVM_INFO: [PASS] reset_mid_op | count=0 empty=1
+
+=============================================
+  Functional checks : pass=5 fail=0
+  Assertion failures: 0
+  UVM_INFO: TEST PASSED
+=============================================
+rtl_projects/fifo/tb_fifo_assertions.sv:146: $finish called at 226000 (1ps)

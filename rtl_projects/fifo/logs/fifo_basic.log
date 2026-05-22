@@ -1,0 +1,26 @@
+=========================================
+  FIFO Basic Test
+=========================================
+UVM_INFO: [PASS] after_reset | full=0 empty=1 count=0
+UVM_INFO: [PASS] after_write_1 | full=0 empty=0 count=1
+
+--- Fill FIFO ---
+UVM_INFO: [PASS] fifo_full | full=1 empty=0 count=8
+
+--- Overflow attempt ---
+UVM_INFO: [PASS] overflow_blocked | full=1 empty=0 count=8
+
+--- Read from full ---
+UVM_INFO: [PASS] first_read | rd_data=aa
+UVM_INFO: [PASS] after_first_read | full=0 empty=0 count=7
+
+--- Drain FIFO ---
+UVM_INFO: [PASS] fifo_empty | full=0 empty=1 count=0
+
+--- Underflow attempt ---
+UVM_INFO: [PASS] underflow_blocked | full=0 empty=1 count=0
+
+  Passed: 8  Failed: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/fifo/tb_fifo_basic.sv:116: $finish called at 196000 (1ps)

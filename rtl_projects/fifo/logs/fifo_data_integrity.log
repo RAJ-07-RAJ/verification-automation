@@ -1,0 +1,34 @@
+=========================================
+  FIFO Data Integrity Test
+=========================================
+
+--- Write sequence 1 to 8 ---
+
+--- Read and verify order ---
+UVM_INFO: [PASS] order_check_0 | rd_data=1 exp=1
+UVM_INFO: [PASS] order_check_1 | rd_data=2 exp=2
+UVM_INFO: [PASS] order_check_2 | rd_data=3 exp=3
+UVM_INFO: [PASS] order_check_3 | rd_data=4 exp=4
+UVM_INFO: [PASS] order_check_4 | rd_data=5 exp=5
+UVM_INFO: [PASS] order_check_5 | rd_data=6 exp=6
+UVM_INFO: [PASS] order_check_6 | rd_data=7 exp=7
+UVM_INFO: [PASS] order_check_7 | rd_data=8 exp=8
+
+--- Pointer wrap test ---
+UVM_INFO: [PASS] wrap_check_0 | rd_data=a0 exp=a0
+UVM_INFO: [PASS] wrap_check_1 | rd_data=a1 exp=a1
+UVM_INFO: [PASS] wrap_check_2 | rd_data=a2 exp=a2
+UVM_INFO: [PASS] wrap_check_3 | rd_data=a3 exp=a3
+UVM_INFO: [PASS] wrap_check_4 | rd_data=a4 exp=a4
+UVM_INFO: [PASS] wrap_check_5 | rd_data=a5 exp=a5
+UVM_INFO: [PASS] wrap_check_6 | rd_data=a6 exp=a6
+UVM_INFO: [PASS] wrap_check_7 | rd_data=a7 exp=a7
+
+--- Simultaneous read/write ---
+UVM_INFO: [PASS] simul_rw_read | rd_data=11 exp=11
+UVM_INFO: [PASS] simul_rw_second | rd_data=22 exp=22
+
+  Passed: 18  Failed: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/fifo/tb_fifo_data_integrity.sv:112: $finish called at 366000 (1ps)
