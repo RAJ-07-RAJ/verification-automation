@@ -1,11 +1,17 @@
 import os
 import subprocess
+import sys
 from datetime import datetime
+from pathlib import Path
 
-testlist_file = "regression_manager/testlists/basic_regression.f"
-log_dir       = "log_parser/sim_runs"
-output_file   = "reports/full_regression.txt"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+testlist_file = paths.TESTLISTS / "basic_regression.f"
+log_dir       = paths.SIM_RUNS
+output_file   = paths.REPORTS / "full_regression.txt"
 os.makedirs(log_dir, exist_ok=True)
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
 
 # ── step 1: read testlist ──────────────────────────────────
 tests = []
@@ -24,7 +30,8 @@ print(f"Launching regression...\n")
 # ── step 2: launch all tests ───────────────────────────────
 for t in tests:
     print(f"  Launching {t['test']} seed={t['seed']}...", end=" ", flush=True)
-    cmd = ["python", "log_parser/fake_simulator.py", t["test"], t["seed"], log_dir]
+    fake_sim = paths.REPO_ROOT / "log_parser" / "fake_simulator" / "fake_sim.py"
+    cmd = [sys.executable, str(fake_sim), t["test"], t["seed"], str(log_dir)]
     result = subprocess.run(cmd, capture_output=True, text=True)
     t["returncode"] = result.returncode
     t["log_file"]   = os.path.join(log_dir, f"{t['test']}_seed{t['seed']}.log")

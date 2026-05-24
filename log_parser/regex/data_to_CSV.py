@@ -2,8 +2,13 @@ import re
 import os
 import csv
 
-logs_folder = "sample_logs"
-output_csv  = "reports/extracted_failures.csv"
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+logs_folder = paths.SAMPLE_LOGS
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
+output_csv  = paths.REPORTS / "extracted_failures.csv"
 log_files   = sorted([f for f in os.listdir(logs_folder) if f.endswith(".log")])
 
 all_failures = []

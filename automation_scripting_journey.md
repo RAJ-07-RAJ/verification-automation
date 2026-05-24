@@ -1,5 +1,10 @@
 # Verification Automation Journey
 
+> **Ongoing build log** for [verification-automation](https://github.com/RAJ-07-RAJ/verification-automation).  
+> Start with [README.md](README.md) for structure and quick start. Future work: [ROADMAP.md](ROADMAP.md).
+
+**Run all scripts from repository root** (uses `paths.py`).
+
 ---
 
 # Stage 1 — Basic Log Reader

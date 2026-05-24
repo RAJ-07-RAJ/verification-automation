@@ -1,11 +1,17 @@
 import re
 import os
 import csv
+import sys
 from datetime import datetime
+from pathlib import Path
 
-cov_folder  = "coverage_tools/sample_coverage"
-output_txt  = "reports/coverage_report.txt"
-output_csv  = "reports/coverage_trend.csv"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+cov_folder  = paths.COVERAGE_SAMPLES
+output_txt  = paths.REPORTS / "coverage_report.txt"
+output_csv  = paths.REPORTS / "coverage_trend.csv"
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
 cov_files   = sorted([f for f in os.listdir(cov_folder) if f.endswith(".txt")])
 
 def parse_coverage(filepath):

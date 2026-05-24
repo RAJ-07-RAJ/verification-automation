@@ -3,9 +3,16 @@ import csv
 from collections import defaultdict
 from datetime import datetime
 
-logs_folder = "sample_logs"
-output_txt  = "reports/failure_triage.txt"
-output_csv  = "reports/failure_triage.csv"
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+logs_folder = paths.SAMPLE_LOGS
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
+output_txt  = paths.REPORTS / "failure_triage.txt"
+output_csv  = paths.REPORTS / "failure_triage.csv"
 log_files   = sorted([f for f in os.listdir(logs_folder) if f.endswith(".log")])
 
 def classify(line):

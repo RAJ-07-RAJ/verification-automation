@@ -1,10 +1,16 @@
 import pandas as pd
 import os
+import sys
 from datetime import datetime
+from pathlib import Path
 
-failures_csv = "reports/extracted_failures.csv"
-triage_csv   = "reports/failure_triage.csv"
-output_file  = "reports/pandas_analysis.txt"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+failures_csv = paths.REPORTS / "extracted_failures.csv"
+triage_csv   = paths.REPORTS / "failure_triage.csv"
+output_file  = paths.REPORTS / "pandas_analysis.txt"
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
 
 df_failures = pd.read_csv(failures_csv)
 df_triage   = pd.read_csv(triage_csv)

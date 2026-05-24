@@ -1,8 +1,14 @@
 import os
+import sys
 from datetime import datetime
+from pathlib import Path
 
-logs_folder = "sample_logs"
-output_file = "reports/regression_report.txt"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+logs_folder = paths.SAMPLE_LOGS
+output_file = paths.REPORTS / "regression_report.txt"
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
 
 log_files = sorted([f for f in os.listdir(logs_folder) if f.endswith(".log")])
 

@@ -1,12 +1,18 @@
-input_file  = "../sample_logs/sim1.log"
-output_file = "../reports/summary.txt"
+import sys
+from pathlib import Path
 
-errors     = []
-warnings   = []
-fatals     = []
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import paths
+
+input_file = paths.SAMPLE_LOGS / "sim1.log"
+output_file = paths.REPORTS / "summary.txt"
+
+errors = []
+warnings = []
+fatals = []
 assertions = []
 
-with open(input_file, "r") as f:
+with open(input_file, "r", encoding="utf-8") as f:
     for line in f:
         line = line.strip()
         if "UVM_ERROR" in line:
@@ -18,10 +24,7 @@ with open(input_file, "r") as f:
         elif "ASSERTION FAILED" in line:
             assertions.append(line)
 
-if len(errors) == 0 and len(fatals) == 0 and len(assertions) == 0:
-    verdict = "PASS"
-else:
-    verdict = "FAIL"
+verdict = "PASS" if not errors and not fatals and not assertions else "FAIL"
 
 lines = []
 lines.append("=" * 45)
@@ -52,10 +55,10 @@ if fatals:
         lines.append("  " + ff)
 
 report = "\n".join(lines)
-
 print(report)
 
-with open(output_file, "w") as f:
+paths.REPORTS.mkdir(parents=True, exist_ok=True)
+with open(output_file, "w", encoding="utf-8") as f:
     f.write(report)
 
 print(f"\nReport saved to: {output_file}")

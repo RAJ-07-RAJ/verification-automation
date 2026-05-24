@@ -1,7 +1,12 @@
 import pandas as pd
+import sys
+from pathlib import Path
 
-failures_csv = "reports/extracted_failures.csv"
-triage_csv   = "reports/failure_triage.csv"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import paths
+
+failures_csv = paths.REPORTS / "extracted_failures.csv"
+triage_csv   = paths.REPORTS / "failure_triage.csv"
 
 df = pd.read_csv(failures_csv)
 
