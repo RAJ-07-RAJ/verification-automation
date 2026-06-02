@@ -1,0 +1,36 @@
+=========================================
+  SPI Basic Test
+=========================================
+VCD info: dumpfile rtl_projects/spi/logs/spi_basic.vcd opened for output.
+UVM_INFO: [PASS] idle_cs_deasserted
+UVM_INFO: [PASS] idle_sclk_low
+
+--- Send 0x55 ---
+UVM_ERROR: [FAIL] slave_received_0x55 | got=0x2a exp=0x55
+UVM_INFO: [PASS] slave_valid_0x55
+
+--- Send 0xAA ---
+UVM_ERROR: [FAIL] slave_received_0xAA | got=0x55 exp=0xaa
+
+--- Send 0x00 ---
+UVM_INFO: [PASS] slave_received_0x00 | got=0x0 exp=0x0
+
+--- Send 0xFF ---
+UVM_ERROR: [FAIL] slave_received_0xFF | got=0x7f exp=0xff
+
+--- MSB first check ---
+UVM_ERROR: [FAIL] msb_first_0x80 | got=0 exp=1
+UVM_INFO: [PASS] msb_first_0x01_lsb_last
+
+--- CS protocol check ---
+UVM_INFO: [PASS] cs_low_during_transfer
+UVM_INFO: [PASS] cs_high_after_done
+
+--- done pulse check ---
+UVM_INFO: [PASS] done_asserted
+UVM_INFO: [PASS] done_cleared
+
+  Passed: 9  Failed: 4
+  UVM_ERROR: TEST FAILED
+=========================================
+rtl_projects/spi/tb_spi_basic.sv:157: $finish called at 2876000 (1ps)

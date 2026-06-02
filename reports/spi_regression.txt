@@ -1,0 +1,16 @@
+
+=======================================================
+  SPI REGRESSION REPORT
+  Generated : 2026-06-02 21:50:39
+=======================================================
+  Total     : 3
+  Passed    : 0
+  Failed    : 3
+  Pass rate : 0%
+=======================================================
+
+TEST                  PASSES  ERRORS  VERDICT
+---------------------------------------------
+spi_basic                  9       5     FAIL
+spi_loopback               2      39     FAIL
+spi_protocol               0       0 COMPILE_FAIL

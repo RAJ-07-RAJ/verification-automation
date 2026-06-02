@@ -1,0 +1,53 @@
+=========================================
+  SPI Loopback Test
+=========================================
+VCD info: dumpfile rtl_projects/spi/logs/spi_loopback.vcd opened for output.
+
+--- Directed loopback ---
+UVM_ERROR: [FAIL] loopback_55_AA_slave | got=0x55 exp=0xaa
+UVM_ERROR: [FAIL] loopback_55_AA_master | got=0x2a exp=0x55
+UVM_ERROR: [FAIL] loopback_00_FF_slave | got=0x7f exp=0xff
+UVM_INFO: [PASS] loopback_00_FF_master | echo=0x0
+UVM_ERROR: [FAIL] loopback_A5_5A_slave | got=0x2d exp=0x5a
+UVM_ERROR: [FAIL] loopback_A5_5A_master | got=0x52 exp=0xa5
+UVM_ERROR: [FAIL] loopback_01_80_slave | got=0x40 exp=0x80
+UVM_ERROR: [FAIL] loopback_01_80_master | got=0x0 exp=0x1
+UVM_INFO: [PASS] loopback_FF_00_slave | rx=0x0
+UVM_ERROR: [FAIL] loopback_FF_00_master | got=0x7f exp=0xff
+
+--- Random loopback (30 pairs) ---
+UVM_ERROR: [FAIL] random_0 | got=0x49 exp=0x92
+UVM_ERROR: [FAIL] random_1 | got=0x20 exp=0x40
+UVM_ERROR: [FAIL] random_2 | got=0x2 exp=0x4
+UVM_ERROR: [FAIL] random_3 | got=0x18 exp=0x31
+UVM_ERROR: [FAIL] random_4 | got=0x43 exp=0x86
+UVM_ERROR: [FAIL] random_5 | got=0x63 exp=0xc6
+UVM_ERROR: [FAIL] random_6 | got=0x19 exp=0x32
+UVM_ERROR: [FAIL] random_7 | got=0x4 exp=0x9
+UVM_ERROR: [FAIL] random_8 | got=0x40 exp=0x80
+UVM_ERROR: [FAIL] random_9 | got=0x43 exp=0x86
+UVM_ERROR: [FAIL] random_10 | got=0x5d exp=0xbb
+UVM_ERROR: [FAIL] random_11 | got=0x4f exp=0x9e
+UVM_ERROR: [FAIL] random_12 | got=0x7b exp=0xf6
+UVM_ERROR: [FAIL] random_13 | got=0x63 exp=0xc6
+UVM_ERROR: [FAIL] random_14 | got=0x7e exp=0xfc
+UVM_ERROR: [FAIL] random_15 | got=0x31 exp=0x63
+UVM_ERROR: [FAIL] random_16 | got=0x31 exp=0x62
+UVM_ERROR: [FAIL] random_17 | got=0x2a exp=0x55
+UVM_ERROR: [FAIL] random_18 | got=0x79 exp=0xf2
+UVM_ERROR: [FAIL] random_19 | got=0x1d exp=0x3b
+UVM_ERROR: [FAIL] random_20 | got=0x4 exp=0x9
+UVM_ERROR: [FAIL] random_21 | got=0x63 exp=0xc7
+UVM_ERROR: [FAIL] random_22 | got=0x7c exp=0xf9
+UVM_ERROR: [FAIL] random_23 | got=0x33 exp=0x67
+UVM_ERROR: [FAIL] random_24 | got=0x3a exp=0x74
+UVM_ERROR: [FAIL] random_25 | got=0x31 exp=0x62
+UVM_ERROR: [FAIL] random_26 | got=0x57 exp=0xae
+UVM_ERROR: [FAIL] random_27 | got=0x2f exp=0x5e
+UVM_ERROR: [FAIL] random_28 | got=0xb exp=0x16
+UVM_ERROR: [FAIL] random_29 | got=0x19 exp=0x32
+
+  Passed: 2  Failed: 38
+  UVM_ERROR: TEST FAILED
+=========================================
+rtl_projects/spi/tb_spi_loopback.sv:137: $finish called at 15146000 (1ps)
