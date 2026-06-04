@@ -1,0 +1,42 @@
+=========================================
+  UART RX Unit Test
+=========================================
+VCD info: dumpfile rtl_projects/uart_tx/logs/uart_rx_unit.vcd opened for output.
+UVM_INFO: [PASS] idle_busy_low
+UVM_INFO: [PASS] idle_valid_low
+
+--- Receive directed bytes ---
+UVM_INFO: [PASS] rx_0x55 | rx_data=0x55
+UVM_INFO: [PASS] rx_valid_cleared_0x55
+UVM_INFO: [PASS] rx_0xAA | rx_data=0xaa
+UVM_INFO: [PASS] rx_0x00 | rx_data=0x0
+UVM_INFO: [PASS] rx_0xFF | rx_data=0xff
+UVM_INFO: [PASS] rx_0x01 | rx_data=0x1
+UVM_INFO: [PASS] rx_0x80 | rx_data=0x80
+
+--- rx_valid pulse width ---
+UVM_INFO: [PASS] rx_valid_single_cycle
+
+--- Glitch rejection ---
+UVM_INFO: [PASS] glitch_rejected
+UVM_INFO: [PASS] no_busy_on_glitch
+
+--- Framing error (bad stop bit) ---
+UVM_INFO: [PASS] framing_error_detected
+UVM_INFO: [PASS] no_valid_on_framing_error
+
+--- Reset during reception ---
+UVM_INFO: [PASS] reset_clears_busy
+UVM_INFO: [PASS] reset_no_spurious_valid
+
+--- Back-to-back frames ---
+UVM_INFO: [PASS] back2back_1 | rx_data=0x12
+UVM_ERROR: [FAIL] back2back_2 | got=0x12 exp=0x34
+UVM_ERROR: [FAIL] back2back_3 | got=0x12 exp=0x56
+
+=========================================
+  RX UNIT TEST SUMMARY
+  Passed: 17  Failed: 2
+  UVM_ERROR: TEST FAILED
+=========================================
+rtl_projects/uart_tx/tb_uart_rx.sv:212: $finish called at 11626000 (1ps)

@@ -22,6 +22,7 @@ UVM_ERROR: [FAIL] slave_received_0xFF | got=0x7f exp=0xff
 UVM_ERROR: [FAIL] msb_first_0x80 | got=0 exp=1
 UVM_INFO: [PASS] msb_first_0x01_lsb_last
 
+
 --- CS protocol check ---
 UVM_INFO: [PASS] cs_low_during_transfer
 UVM_INFO: [PASS] cs_high_after_done

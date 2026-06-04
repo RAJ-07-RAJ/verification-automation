@@ -1,0 +1,21 @@
+
+============================================================
+  UART REGRESSION REPORT
+  Generated : 2026-06-04 22:34:36
+============================================================
+  Total     : 3
+  Passed    : 1
+  Failed    : 2
+  Pass rate : 33%
+============================================================
+
+TEST                         PASSES ERRORS  VERDICT
+-------------------------------------------------------
+uart_tx_unit                     66     35     FAIL
+uart_rx_unit                     17      3     FAIL
+uart_top_integration             61      0     PASS
+
+TEST LEVELS:
+  uart_tx_unit          — unit test, TX block only
+  uart_rx_unit          — unit test, RX block only
+  uart_top_integration  — integration, TX+RX loopback

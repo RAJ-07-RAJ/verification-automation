@@ -1,0 +1,119 @@
+=========================================
+  UART TX Unit Test
+=========================================
+VCD info: dumpfile rtl_projects/uart_tx/logs/uart_tx_unit.vcd opened for output.
+UVM_INFO: [PASS] idle_line_high
+UVM_INFO: [PASS] idle_busy_low
+UVM_INFO: [PASS] idle_done_low
+
+--- Frame verification ---
+UVM_INFO: [PASS] tx_0x55_busy_high
+UVM_ERROR: [FAIL] tx_0x55_start_bit_low | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x55_stop_bit_high | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x55_bit0 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x55_bit1 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x55_bit2 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x55_bit3 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x55_bit4 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x55_bit5 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x55_bit6 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x55_bit7 | got=1 exp=0
+UVM_INFO: [PASS] tx_0x55_done_pulse
+UVM_INFO: [PASS] tx_0x55_busy_cleared
+UVM_INFO: [PASS] tx_0xAA_busy_high
+UVM_ERROR: [FAIL] tx_0xAA_start_bit_low | got=1 exp=0
+UVM_INFO: [PASS] tx_0xAA_stop_bit_high
+UVM_INFO: [PASS] tx_0xAA_bit0
+UVM_ERROR: [FAIL] tx_0xAA_bit1 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0xAA_bit2 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0xAA_bit3 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0xAA_bit4 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0xAA_bit5 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0xAA_bit6 | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0xAA_bit7 | got=0 exp=1
+UVM_INFO: [PASS] tx_0xAA_done_pulse
+UVM_INFO: [PASS] tx_0xAA_busy_cleared
+UVM_INFO: [PASS] tx_0x00_busy_high
+UVM_ERROR: [FAIL] tx_0x00_start_bit_low | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x00_stop_bit_high | got=0 exp=1
+UVM_INFO: [PASS] tx_0x00_bit0
+UVM_INFO: [PASS] tx_0x00_bit1
+UVM_INFO: [PASS] tx_0x00_bit2
+UVM_INFO: [PASS] tx_0x00_bit3
+UVM_INFO: [PASS] tx_0x00_bit4
+UVM_INFO: [PASS] tx_0x00_bit5
+UVM_INFO: [PASS] tx_0x00_bit6
+UVM_INFO: [PASS] tx_0x00_bit7
+UVM_INFO: [PASS] tx_0x00_done_pulse
+UVM_INFO: [PASS] tx_0x00_busy_cleared
+UVM_INFO: [PASS] tx_0xFF_busy_high
+UVM_ERROR: [FAIL] tx_0xFF_start_bit_low | got=1 exp=0
+UVM_INFO: [PASS] tx_0xFF_stop_bit_high
+UVM_ERROR: [FAIL] tx_0xFF_bit0 | got=0 exp=1
+UVM_INFO: [PASS] tx_0xFF_bit1
+UVM_INFO: [PASS] tx_0xFF_bit2
+UVM_INFO: [PASS] tx_0xFF_bit3
+UVM_INFO: [PASS] tx_0xFF_bit4
+UVM_INFO: [PASS] tx_0xFF_bit5
+UVM_INFO: [PASS] tx_0xFF_bit6
+UVM_INFO: [PASS] tx_0xFF_bit7
+UVM_INFO: [PASS] tx_0xFF_done_pulse
+UVM_INFO: [PASS] tx_0xFF_busy_cleared
+UVM_INFO: [PASS] tx_0x01_busy_high
+UVM_ERROR: [FAIL] tx_0x01_start_bit_low | got=1 exp=0
+UVM_ERROR: [FAIL] tx_0x01_stop_bit_high | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x01_bit0 | got=0 exp=1
+UVM_ERROR: [FAIL] tx_0x01_bit1 | got=1 exp=0
+UVM_INFO: [PASS] tx_0x01_bit2
+UVM_INFO: [PASS] tx_0x01_bit3
+UVM_INFO: [PASS] tx_0x01_bit4
+UVM_INFO: [PASS] tx_0x01_bit5
+UVM_INFO: [PASS] tx_0x01_bit6
+UVM_INFO: [PASS] tx_0x01_bit7
+UVM_INFO: [PASS] tx_0x01_done_pulse
+UVM_INFO: [PASS] tx_0x01_busy_cleared
+UVM_INFO: [PASS] tx_0x80_busy_high
+UVM_ERROR: [FAIL] tx_0x80_start_bit_low | got=1 exp=0
+UVM_INFO: [PASS] tx_0x80_stop_bit_high
+UVM_INFO: [PASS] tx_0x80_bit0
+UVM_INFO: [PASS] tx_0x80_bit1
+UVM_INFO: [PASS] tx_0x80_bit2
+UVM_INFO: [PASS] tx_0x80_bit3
+UVM_INFO: [PASS] tx_0x80_bit4
+UVM_INFO: [PASS] tx_0x80_bit5
+UVM_INFO: [PASS] tx_0x80_bit6
+UVM_ERROR: [FAIL] tx_0x80_bit7 | got=0 exp=1
+UVM_INFO: [PASS] tx_0x80_done_pulse
+UVM_INFO: [PASS] tx_0x80_busy_cleared
+
+--- tx_done pulse width ---
+UVM_INFO: [PASS] tx_done_single_cycle
+
+--- tx_start ignored during busy ---
+UVM_INFO: [PASS] still_busy_after_second_start
+UVM_INFO: [PASS] after_busy_clears_busy_high
+UVM_ERROR: [FAIL] after_busy_clears_start_bit_low | got=1 exp=0
+UVM_INFO: [PASS] after_busy_clears_stop_bit_high
+UVM_ERROR: [FAIL] after_busy_clears_bit0 | got=0 exp=1
+UVM_ERROR: [FAIL] after_busy_clears_bit1 | got=1 exp=0
+UVM_ERROR: [FAIL] after_busy_clears_bit2 | got=0 exp=1
+UVM_INFO: [PASS] after_busy_clears_bit3
+UVM_INFO: [PASS] after_busy_clears_bit4
+UVM_ERROR: [FAIL] after_busy_clears_bit5 | got=1 exp=0
+UVM_ERROR: [FAIL] after_busy_clears_bit6 | got=0 exp=1
+UVM_INFO: [PASS] after_busy_clears_bit7
+UVM_INFO: [PASS] after_busy_clears_done_pulse
+UVM_INFO: [PASS] after_busy_clears_busy_cleared
+
+--- Reset mid-transmission ---
+UVM_INFO: [PASS] busy_before_reset
+UVM_INFO: [PASS] tx_high_after_reset
+UVM_INFO: [PASS] busy_cleared_by_reset
+UVM_INFO: [PASS] done_not_set_by_reset
+
+=========================================
+  TX UNIT TEST SUMMARY
+  Passed: 66  Failed: 34
+  UVM_ERROR: TEST FAILED
+=========================================
+rtl_projects/uart_tx/tb_uart_tx.sv:164: $finish called at 9466000 (1ps)

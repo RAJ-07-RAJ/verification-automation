@@ -1,0 +1,81 @@
+=========================================
+  UART Top Integration Test
+  TX looped back to RX internally
+=========================================
+VCD info: dumpfile rtl_projects/uart_tx/logs/uart_top.vcd opened for output.
+
+--- Corner case bytes ---
+UVM_INFO: [PASS] loopback_0x00 | sent=0x0 rcvd=0x0
+UVM_INFO: [PASS] loopback_0xFF | sent=0xff rcvd=0xff
+UVM_INFO: [PASS] loopback_0x55 | sent=0x55 rcvd=0x55
+UVM_INFO: [PASS] loopback_0xAA | sent=0xaa rcvd=0xaa
+UVM_INFO: [PASS] loopback_0x01 | sent=0x1 rcvd=0x1
+UVM_INFO: [PASS] loopback_0x80 | sent=0x80 rcvd=0x80
+UVM_INFO: [PASS] loopback_0xA5 | sent=0xa5 rcvd=0xa5
+UVM_INFO: [PASS] loopback_0x5A | sent=0x5a rcvd=0x5a
+
+--- Random loopback (50 bytes) ---
+UVM_INFO: [PASS] random_0 | sent=0x92 rcvd=0x92
+UVM_INFO: [PASS] random_1 | sent=0x40 rcvd=0x40
+UVM_INFO: [PASS] random_2 | sent=0x4 rcvd=0x4
+UVM_INFO: [PASS] random_3 | sent=0x31 rcvd=0x31
+UVM_INFO: [PASS] random_4 | sent=0x86 rcvd=0x86
+UVM_INFO: [PASS] random_5 | sent=0xc6 rcvd=0xc6
+UVM_INFO: [PASS] random_6 | sent=0x32 rcvd=0x32
+UVM_INFO: [PASS] random_7 | sent=0x9 rcvd=0x9
+UVM_INFO: [PASS] random_8 | sent=0x80 rcvd=0x80
+UVM_INFO: [PASS] random_9 | sent=0x86 rcvd=0x86
+UVM_INFO: [PASS] random_10 | sent=0xbb rcvd=0xbb
+UVM_INFO: [PASS] random_11 | sent=0x9e rcvd=0x9e
+UVM_INFO: [PASS] random_12 | sent=0xf6 rcvd=0xf6
+UVM_INFO: [PASS] random_13 | sent=0xc6 rcvd=0xc6
+UVM_INFO: [PASS] random_14 | sent=0xfc rcvd=0xfc
+UVM_INFO: [PASS] random_15 | sent=0x63 rcvd=0x63
+UVM_INFO: [PASS] random_16 | sent=0x62 rcvd=0x62
+UVM_INFO: [PASS] random_17 | sent=0x55 rcvd=0x55
+UVM_INFO: [PASS] random_18 | sent=0xf2 rcvd=0xf2
+UVM_INFO: [PASS] random_19 | sent=0x3b rcvd=0x3b
+UVM_INFO: [PASS] random_20 | sent=0x9 rcvd=0x9
+UVM_INFO: [PASS] random_21 | sent=0xc7 rcvd=0xc7
+UVM_INFO: [PASS] random_22 | sent=0xf9 rcvd=0xf9
+UVM_INFO: [PASS] random_23 | sent=0x67 rcvd=0x67
+UVM_INFO: [PASS] random_24 | sent=0x74 rcvd=0x74
+UVM_INFO: [PASS] random_25 | sent=0x62 rcvd=0x62
+UVM_INFO: [PASS] random_26 | sent=0xae rcvd=0xae
+UVM_INFO: [PASS] random_27 | sent=0x5e rcvd=0x5e
+UVM_INFO: [PASS] random_28 | sent=0x16 rcvd=0x16
+UVM_INFO: [PASS] random_29 | sent=0x32 rcvd=0x32
+UVM_INFO: [PASS] random_30 | sent=0x31 rcvd=0x31
+UVM_INFO: [PASS] random_31 | sent=0x85 rcvd=0x85
+UVM_INFO: [PASS] random_32 | sent=0x40 rcvd=0x40
+UVM_INFO: [PASS] random_33 | sent=0x90 rcvd=0x90
+UVM_INFO: [PASS] random_34 | sent=0xd5 rcvd=0xd5
+UVM_INFO: [PASS] random_35 | sent=0x4e rcvd=0x4e
+UVM_INFO: [PASS] random_36 | sent=0x4b rcvd=0x4b
+UVM_INFO: [PASS] random_37 | sent=0x9 rcvd=0x9
+UVM_INFO: [PASS] random_38 | sent=0x6 rcvd=0x6
+UVM_INFO: [PASS] random_39 | sent=0x29 rcvd=0x29
+UVM_INFO: [PASS] random_40 | sent=0xb5 rcvd=0xb5
+UVM_INFO: [PASS] random_41 | sent=0x6a rcvd=0x6a
+UVM_INFO: [PASS] random_42 | sent=0x1 rcvd=0x1
+UVM_INFO: [PASS] random_43 | sent=0x57 rcvd=0x57
+UVM_INFO: [PASS] random_44 | sent=0x8e rcvd=0x8e
+UVM_INFO: [PASS] random_45 | sent=0x67 rcvd=0x67
+UVM_INFO: [PASS] random_46 | sent=0x91 rcvd=0x91
+UVM_INFO: [PASS] random_47 | sent=0x85 rcvd=0x85
+UVM_INFO: [PASS] random_48 | sent=0x65 rcvd=0x65
+UVM_INFO: [PASS] random_49 | sent=0x1e rcvd=0x1e
+UVM_INFO: [PASS] no_framing_errors
+
+--- Flag integrity ---
+UVM_INFO: [PASS] tx_done_observed
+UVM_INFO: [PASS] rx_valid_observed
+
+=========================================
+  UART TOP INTEGRATION SUMMARY
+  Passed        : 61
+  Failed        : 0
+  Framing errors: 0
+  UVM_INFO: TEST PASSED
+=========================================
+rtl_projects/uart_tx/tb_uart_top.sv:156: $finish called at 60206000 (1ps)

@@ -384,3 +384,43 @@ Parallel load. Synchronous reset. Priority: rst > load > enable > hold.
 - Each TB compiles and simulates independently
 - run.py orchestrates all 4, generates unified report
 - Random testing with self-checking reference model
+
+---
+# Stage 12 — SPI Master/Slave
+
+## Design
+`rtl_projects/spi/spi_master.sv` — SPI master, Mode 0, CLK_DIV parameterised
+`rtl_projects/spi/spi_slave.sv`  — SPI slave, echoes received byte (loopback slave)
+
+## Tests
+- tb_spi_basic.sv    — CS/SCLK protocol, MSB first, done pulse, 0x00/0xFF/0x55/0xAA
+- tb_spi_loopback.sv — 5 directed pairs + 30 random loopback transfers
+- tb_spi_protocol.sv — start during transfer, back-to-back, reset mid-transfer
+
+## Key Concepts Learned
+- SPI Mode 0 — CPOL=0 CPHA=0
+- Full duplex — MOSI and MISO simultaneous
+- CS_N timing — must surround entire transfer
+- Loopback slave — echo model for verification
+- SCLK gating — only active during transfer
+- Edge detection — rising/falling SCLK on slave side
+- Off-by-one in loopback — slave echoes on next transfer not same
+
+---
+# Stage 13 (updated) — UART TX + RX + Top Integration
+
+## RTL Files
+- uart_tx.sv   — transmitter FSM, baud generator
+- uart_rx.sv   — receiver, 2-flop sync, glitch rejection, framing error
+- uart_top.sv  — integration wrapper, TX+RX as one IP block
+
+## Test Strategy
+  Unit tests    →  tb_uart_tx.sv  tests TX in isolation
+                   tb_uart_rx.sv  tests RX in isolation
+  Integration   →  tb_uart_top.sv via uart_top, tx_out→rx_in loopback
+
+## Why both unit and integration
+  Unit catches bugs inside the block
+  Integration catches interface bugs — timing, signal polarity,
+  baud mismatch — that only appear when both blocks run together
+  This is industry standard verification practice
